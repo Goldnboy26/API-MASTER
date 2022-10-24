@@ -108,10 +108,9 @@ Testing restful API calls with Insomnia Core
 ## Submission:
  [Github repository](https://github.com/Goldnboy26/API-MASTER)
 
-## Questions:
- Here is a link to my 
+## Questions: 
  
- [github](https://github.com/Goldnboy26)
+ [Goldnboy26](https://github.com/Goldnboy26)
  
- [Email](enrique.monje1994@yahoo.com)
+ [enrique.monje1994@yahoo.com](enrique.monje1994@yahoo.com)
 
