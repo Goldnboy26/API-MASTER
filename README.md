@@ -106,13 +106,12 @@ Testing restful API calls with Insomnia Core
  This project is under no license.  
 
 ## Submission:
- [Github repository](https://github.com/Goldnboy26/API-MASTER
-)
+ [Github repository](https://github.com/Goldnboy26/API-MASTER)
 
 ## Questions:
- Here is a link to my github:  
-https://github.com/Goldnboy26  
- Email me at:  
-enrique.monje1994@yahoo.com  
-for additional questions
+ Here is a link to my 
+ 
+ [github](https://github.com/Goldnboy26)
+ 
+ [Email](enrique.monje1994@yahoo.com)
 
