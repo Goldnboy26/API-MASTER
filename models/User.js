@@ -1,46 +1,31 @@
 const { Schema, model } = require('mongoose');
-const moment = require('moment');
 
-const UserSchema = new Schema({
-    username: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        match: [/.+@.+\..+/]
-    },
-    thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Thought'
-        }
-    ],
-    friends: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }
-    ]
+// create new instance of the use schema 
+const userSchema = new Schema(
+{
+    username: { type: String, Unique: true, required: true, trimmed: true }, 
+    email: { type: String, required: true, unique: true},
+    thoughts: [{ type: Schema.Types.Array, ref: 'thought',}],
+    friends: [{ type: Schema.Types.ObjectId, ref: 'user',}],
 },
     {
-        toJSON: {
-            virtuals: true
-        },
-        id: false
-    }
-);
-
-UserSchema.virtual('friendCount').get(function () {
-    return this.friends.length;
+    toJSON: {
+        virtuals: true,
+    },
+    id: false,
 });
 
-// create the User model using the UserSchema
-const User = model('User', UserSchema);
+// this virtual is called 'friendCount' and it retrieves the length of the user's 'friends' array field on query 
+userSchema 
+    .virtual('friendCount')
+    .get(function () {
+        const numberOfFriends = this.friends.length;
+        return numberOfFriends
+    }) 
 
-// export the User model
+//initialize the model 
+const User = model('user', userSchema);
+
 module.exports = User;
+
+

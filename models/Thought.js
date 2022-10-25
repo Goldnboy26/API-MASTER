@@ -1,69 +1,36 @@
-const { Schema, model, Types } = require('mongoose');
-const moment = require('moment');
+const { Schema, model } = require('mongoose');
+const reactionSchema = require('./Reaction');
 
-const ReactionSchema = new Schema({
-    reactionId: {
-        type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId()
-    },
-    reactionBody: {
-        type: String,
-        required: true,
-        maxlength: 280
-    },
-    username: {
-        type: String,
-        required: true
-    },
+
+// create new instance of the thought schema 
+const thoughtSchema = new Schema(
+{
+    thoughtText: { type: String, required: true, minlength: 1, maxlength: 280 }, 
     createdAt: {
         type: Date,
         default: Date.now,
-        get: createdAtVal => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
-    }
+    },
+    username: { type: String, required: true },
+    reactions: [reactionSchema]
 },
     {
-        toJSON: {
-            virtuals: true,
-            getters: true
-        },
-        id: false
-    }
-);
-
-const ThoughtSchema = new Schema({
-    thoughtText: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 280
+    toJSON: {
+        virtuals: true,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-        get: createdAtVal => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
-    },
-    username: {
-        type: String,
-        required: true
-    },
-    reactions: [ReactionSchema]
-},
-
-    {
-        toJSON: {
-            virtuals: true,
-            getters: true
-        },
-        id: false
-    }
-);
-
-ThoughtSchema.virtual('reactionCount').get(function () {
-    return this.reactions.length;
+    id: false,
 });
 
-// create the Thought model using the ThoughtSchema
-const Thought = model('Thought', ThoughtSchema);
+// this virtual is called `reactionCount` and it retrieves the length of the thought's `reactions` array field on query.
+thoughtSchema
+    .virtual('reactionCount')
+    .get(function () {
+        const numberOfReactions = this.reactions.length;
+        return numberOfReactions;
+    })
 
-// export the Thought model
+// initialize the model 
+const Thought = model('thought', thoughtSchema)
+
 module.exports = Thought;
+
+

@@ -1,23 +1,19 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const db = require('./config/connection');
+const routes = require('./controllers/api-routes');
 
-const app = express();
+
 const PORT = process.env.PORT || 3001;
+const app = express();
 
-app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.json());
+app.use('/api', routes);
 
-app.use(require('./routes'));
+db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`Relax! Everything is fine over on port ${PORT}!`);
+    });
+  });
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/API-MASTER', {
-  useFindAndModify: false,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-// Use this to log mongo queries being executed!
-mongoose.set('debug', true);
-
-
-app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
