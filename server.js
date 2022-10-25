@@ -13,7 +13,7 @@ app.use('/api', routes);
 
 db.once('open', () => {
     app.listen(PORT, () => {
-      console.log(`Relax! Everything is fine over on port ${PORT}!`);
+      console.log(`Connect to 127.0.0.1:${PORT}!`);
     });
   });
 
