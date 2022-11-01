@@ -23,9 +23,9 @@ This is a set of API for a social network that uses a MongoDB database so that t
 - Testing API POST and DELETE routes in Insomnia Core are able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list.
 
 ## Walkthrough Videos  
-[Friend Routes](chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/f9afc67e-d34e-4738-y6b8-b176bc0c6e19)  
-[Thought Routes](chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/e233a804-e30b-4ac9-y2b2-f5da4253c996)  
-[Reaction Routes](chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/80c9273b-00b1-478b-ya0e-b12990ea389d)  
+[Friend Routes](https://drive.google.com/file/d/1i3iqHn1s7Am_Wqb07ICy-Upl8SmCJ9C5/view)  
+[Thought Routes](https://drive.google.com/file/d/1227_-ZCbErCVabncjk_3nTOtJjoBM59C/view)  
+[Reaction Routes](https://drive.google.com/file/d/1sHLaneAg7WwL_VcBUpH5eBVTI6-p_fxU/view)  
 
 ## Installation:
 This repo is not to be deployed, if you wanted to, you could by doing the following:  
