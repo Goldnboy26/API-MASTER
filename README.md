@@ -22,11 +22,10 @@ This is a set of API for a social network that uses a MongoDB database so that t
 
 - Testing API POST and DELETE routes in Insomnia Core are able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list.
 
-## Walkthrough Videos
-[User Routes]()  
-[Friend Routes]()  
-[Thought Routes]()  
-[Reaction Routes]()  
+## Walkthrough Videos  
+[Friend Routes](chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/f9afc67e-d34e-4738-y6b8-b176bc0c6e19)  
+[Thought Routes](chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/e233a804-e30b-4ac9-y2b2-f5da4253c996)  
+[Reaction Routes](chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/80c9273b-00b1-478b-ya0e-b12990ea389d)  
 
 ## Installation:
 This repo is not to be deployed, if you wanted to, you could by doing the following:  
@@ -56,8 +55,8 @@ Testing restful API calls with Insomnia Core
     ```json
     // example data
     {
-        "username": "lernantino",
-        "email": "lernantino@gmail.com"
+        "username": "Goldnboy26",
+        "email": "enrique.monje1994@yahoo.com"
     }
     ```
 ---
@@ -77,8 +76,8 @@ Testing restful API calls with Insomnia Core
     // example data
     {
     "thoughtText": "Here's a cool thought...",
-    "username": "lernantino",
-    "userId": "5edff358a0fcb779aa7b118b"
+    "username": "Goldnboy26",
+    "userId":
     }
     ```
 ---
@@ -94,8 +93,8 @@ Testing restful API calls with Insomnia Core
     ```json
     // example data
     {
-    "reactionBody":"Hell Yeah!!",
-    "username":"lernantino"
+    "reactionBody":"Lets GO!!....",
+    "username":"Goldnboy26"
     }
     ```
 ---
