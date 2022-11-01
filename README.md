@@ -75,7 +75,7 @@ Testing restful API calls with Insomnia Core
     ```json
     // example data
     {
-    "thoughtText": "Here's a cool thought...",
+    "thoughtText": "just hit a new PR in the gym, U Mirin BRO?...",
     "username": "Goldnboy26",
     "userId":
     }
